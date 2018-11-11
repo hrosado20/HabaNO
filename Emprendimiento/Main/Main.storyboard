@@ -28,20 +28,20 @@
             </objects>
             <point key="canvasLocation" x="-113" y="-88"/>
         </scene>
-        <!--Home-->
+        <!--Restaurant-->
         <scene sceneID="yJk-mZ-HLt">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="L4m-uN-Az6" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Restaurant" id="L4m-uN-Az6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="mRL-Sc-URD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVh-uT-OVr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-486" y="418"/>
         </scene>
-        <!--Restaurant-->
+        <!--Order-->
         <scene sceneID="QPi-q5-4ob">
             <objects>
-                <viewControllerPlaceholder storyboardName="Restaurant" id="psC-Rb-MGa" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Order" id="psC-Rb-MGa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Restaurant" id="LAS-8f-h19"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxx-7w-eb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
