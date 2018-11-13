@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CreditCard" representedClassName="CreditCard" syncable="YES" codeGenerationType="class">
+        <attribute name="cardNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cvc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expirationMonth" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="expirationYear" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Follow" representedClassName="Follow" syncable="YES" codeGenerationType="class">
         <relationship name="follower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="followers" inverseEntity="User" syncable="YES"/>
         <relationship name="following" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="followings" inverseEntity="User" syncable="YES"/>
@@ -37,6 +44,7 @@
         <relationship name="login" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Login" inverseName="user" inverseEntity="Login" syncable="YES"/>
     </entity>
     <elements>
+        <element name="CreditCard" positionX="-36" positionY="108" width="128" height="120"/>
         <element name="Follow" positionX="-18" positionY="99" width="128" height="75"/>
         <element name="Login" positionX="-27" positionY="99" width="128" height="90"/>
         <element name="Order" positionX="-63" positionY="-18" width="128" height="135"/>

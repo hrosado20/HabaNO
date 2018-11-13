@@ -1,16 +1,24 @@
 PODS:
+  - CreditCardForm (0.1.8)
+  - Stripe (13.2.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - CreditCardForm
+  - Stripe
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CreditCardForm
+    - Stripe
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  CreditCardForm: 7e67bc394545eda9e502652af0858552b4931728
+  Stripe: 2c69e216061d54d9c538204bb4f58bd597ddfc5b
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 23773066b6181c69a3fedaf7566b4665e20e2041
+PODFILE CHECKSUM: 5d906a9d86c83f56a9a68db2082e47c5164b4b89
 
 COCOAPODS: 1.5.3

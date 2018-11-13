@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="BRW-pa-d5K">
             <objects>
-                <viewController id="TQu-T5-1lS" customClass="LoginViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TQu-T5-1lS" customClass="LoginViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WmQ-5j-iCm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,7 +177,7 @@
         <!--Register View Controller-->
         <scene sceneID="iJj-vA-RYX">
             <objects>
-                <viewController id="kZv-aU-zhF" customClass="RegisterViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kZv-aU-zhF" customClass="RegisterViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5z-W5-Lbi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -349,11 +349,92 @@
             </objects>
             <point key="canvasLocation" x="951" y="179"/>
         </scene>
+        <!--Credit Card View Controller-->
+        <scene sceneID="W1f-q4-S9u">
+            <objects>
+                <viewController storyboardIdentifier="CreditCardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mez-Vv-t7z" customClass="CreditCardViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OAp-aV-D8l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gT-jw-0Wn">
+                                <rect key="frame" x="37" y="187" width="300" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="3Hi-93-Hq6"/>
+                                    <constraint firstAttribute="height" constant="240" id="gZ4-Lf-car"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Necesitamos información de tu tarjeta de crédito para que puedas tener un mejor y rápida experiencia." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e11-IU-9Lq">
+                                <rect key="frame" x="50" y="50" width="275" height="57"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9fr-pn-eLS">
+                                <rect key="frame" x="67" y="567" width="240" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8Q-co-5N0">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                        <color key="backgroundColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="VV7-7b-60k"/>
+                                            <constraint firstAttribute="width" constant="240" id="qXV-ZN-VZF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                                        <state key="normal" title="Guardar Tarjéta de crédito">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerAction:" destination="kZv-aU-zhF" eventType="touchUpInside" id="2FU-hu-cvx"/>
+                                            <action selector="saveCreditCardAction:" destination="Mez-Vv-t7z" eventType="touchUpInside" id="tbD-AE-A08"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-d6-8Ku">
+                                        <rect key="frame" x="0.0" y="40" width="240" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="BYh-O5-T6q"/>
+                                            <constraint firstAttribute="height" constant="40" id="aD2-zL-yrn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                        <state key="normal" title="Saltar">
+                                            <color key="titleColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="skipAction:" destination="Mez-Vv-t7z" eventType="touchUpInside" id="nvv-jM-eED"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7gT-jw-0Wn" firstAttribute="centerX" secondItem="OAp-aV-D8l" secondAttribute="centerX" id="0Ge-3C-RBK"/>
+                            <constraint firstItem="9fr-pn-eLS" firstAttribute="centerX" secondItem="OAp-aV-D8l" secondAttribute="centerX" id="3wk-cy-kRT"/>
+                            <constraint firstItem="e11-IU-9Lq" firstAttribute="leading" secondItem="FV7-wa-c9X" secondAttribute="leading" constant="50" id="4dH-Dr-soR"/>
+                            <constraint firstItem="FV7-wa-c9X" firstAttribute="trailing" secondItem="e11-IU-9Lq" secondAttribute="trailing" constant="50" id="6KI-gy-Ube"/>
+                            <constraint firstItem="FV7-wa-c9X" firstAttribute="bottom" secondItem="9fr-pn-eLS" secondAttribute="bottom" constant="20" id="YPr-gD-H6k"/>
+                            <constraint firstItem="7gT-jw-0Wn" firstAttribute="top" secondItem="e11-IU-9Lq" secondAttribute="bottom" constant="80" id="iVP-PP-BTY"/>
+                            <constraint firstItem="e11-IU-9Lq" firstAttribute="top" secondItem="FV7-wa-c9X" secondAttribute="top" constant="30" id="quK-Zv-btV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FV7-wa-c9X"/>
+                    </view>
+                    <connections>
+                        <outlet property="creditCardView" destination="7gT-jw-0Wn" id="nb6-ij-a1n"/>
+                        <outlet property="descriptionLabel" destination="e11-IU-9Lq" id="tBt-vE-9lN"/>
+                        <outlet property="saveCreditCardButton" destination="u8Q-co-5N0" id="YVo-Ht-xdq"/>
+                        <outlet property="skipButton" destination="Wfk-d6-8Ku" id="vuN-TG-M2s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caB-SE-sqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.2" y="178.56071964017991"/>
+        </scene>
     </scenes>
     <resources>
         <image name="restaurant_icon" width="518" height="518"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0eW-Ks-VsB"/>
+        <segue reference="rXD-ms-L6u"/>
     </inferredMetricsTieBreakers>
 </document>

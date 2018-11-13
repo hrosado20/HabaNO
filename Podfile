@@ -7,6 +7,8 @@ target 'Emprendimiento' do
 
   # Pods for Emprendimiento
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'CreditCardForm'
+  pod 'Stripe'
 
   target 'EmprendimientoTests' do
     inherit! :search_paths

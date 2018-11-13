@@ -40,10 +40,19 @@ class ModelStore {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
+    func addCreditCard(owner: String, cardNumber: String, expirationMonth: Int, expirationYear: Int, cvc: String) -> Void {
+        let creditCard = CreditCard(context: self.context)
+        creditCard.owner = owner
+        creditCard.cardNumber = cardNumber
+        creditCard.expirationMonth = Int32(expirationMonth)
+        creditCard.expirationYear = Int32(expirationYear)
+        creditCard.cvc = cvc
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
     func signIn(email: String, password: String) -> Bool {
-        let request = NSFetchRequest<Login>(entityName: "Login")
         let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
-//        fetchRequest.predicate = NSPredicate(format: "email == %@", <#T##args: CVarArg...##CVarArg#>)
         fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
             NSPredicate(format: "email == %@", email),
             NSPredicate(format: "password == %@", password)

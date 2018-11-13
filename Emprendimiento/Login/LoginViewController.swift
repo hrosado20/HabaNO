@@ -37,7 +37,8 @@ class LoginViewController: UIViewController {
         
         if self.modelStore.signIn(email: self.emailTextField.text!, password: self.passwordTextField.text!) {
             let destinationVC = AppStoryboard.Main.initialViewController()
-            self.present(destinationVC!, animated: true, completion: nil)
+            let vc = AppStoryboard.Login.viewController(viewControllerClass: CreditCardViewController.self)
+            self.present(vc, animated: true, completion: nil)
         } else {
             let alertController = UIAlertController(title: "Error al iniciar sesión", message: "Credenciales incorrectas.", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
