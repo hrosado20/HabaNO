@@ -61,6 +61,9 @@ class ModelStore {
         do {
             let result = try self.context.fetch(fetchRequest)
             if !result.isEmpty {
+                print(result[0].user!.objectID.uriRepresentation())
+                UserDefaults.standard.set(result[0].user?.objectID.uriRepresentation(), forKey: "userId")
+                print(UserDefaults.standard.url(forKey: "userId"))
                 return true
             } else {
                 return false

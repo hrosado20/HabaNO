@@ -138,6 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Xat-qZ-rTG" id="oQI-5f-qOk"/>
+                        <outlet property="loginScrollView" destination="MTy-q3-2wT" id="Faz-RC-ygu"/>
                         <outlet property="passwordTextField" destination="Kla-Ye-Jl5" id="dpw-d7-rxS"/>
                         <outlet property="signInButton" destination="48y-0d-DeF" id="1k5-c7-6hJ"/>
                     </connections>
@@ -343,6 +344,7 @@
                         <outlet property="passwordTextField" destination="dvD-6X-i41" id="s8Q-Ye-vGL"/>
                         <outlet property="registerButton" destination="lxn-UN-0Sz" id="Vv5-sV-sJW"/>
                         <outlet property="repeatPasswordTextField" destination="BUa-Wf-5pk" id="0Mc-eL-4d8"/>
+                        <outlet property="signUpScrollView" destination="RiK-hV-FCF" id="NtL-MT-IWl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWL-M8-Lff" userLabel="First Responder" sceneMemberID="firstResponder"/>

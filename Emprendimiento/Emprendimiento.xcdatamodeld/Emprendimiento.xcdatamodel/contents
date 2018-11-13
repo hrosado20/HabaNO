@@ -26,8 +26,10 @@
     </entity>
     <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="finalDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="initialDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
@@ -48,7 +50,7 @@
         <element name="Follow" positionX="-18" positionY="99" width="128" height="75"/>
         <element name="Login" positionX="-27" positionY="99" width="128" height="90"/>
         <element name="Order" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Restaurant" positionX="-54" positionY="36" width="128" height="105"/>
+        <element name="Restaurant" positionX="-54" positionY="36" width="128" height="135"/>
         <element name="User" positionX="-36" positionY="54" width="128" height="210"/>
     </elements>
 </model>

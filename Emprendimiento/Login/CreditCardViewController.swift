@@ -79,6 +79,7 @@ class CreditCardViewController: UIViewController {
         }
         
         self.modelStore.addCreditCard(owner: "", cardNumber: self.paymentTextField.cardNumber!, expirationMonth: self.paymentTextField.expirationMonth.hashValue, expirationYear: self.paymentTextField.expirationYear.hashValue, cvc: self.paymentTextField.cvc!)
+        UserDefaults.standard.set(false, forKey: "showStartCreditCard")
         let destinationVC = AppStoryboard.Main.initialViewController()
         self.present(destinationVC!, animated: true, completion: nil)
     }
