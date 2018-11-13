@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		404064B1219A9EEF00118309 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404064B0219A9EEF00118309 /* RegisterViewController.swift */; };
+		404064B3219AABD000118309 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404064B2219AABD000118309 /* AppStoryboard.swift */; };
+		404064B5219AF03300118309 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404064B4219AF03300118309 /* ProfileViewController.swift */; };
 		4045E1F621987508004C4A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045E1F521987508004C4A7C /* AppDelegate.swift */; };
 		4045E1FE21987508004C4A7C /* Emprendimiento.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4045E1FC21987508004C4A7C /* Emprendimiento.xcdatamodeld */; };
 		4045E2002198750A004C4A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4045E1FF2198750A004C4A7C /* Assets.xcassets */; };
@@ -18,6 +21,8 @@
 		4045E2342198C10D004C4A7C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4045E2332198C10D004C4A7C /* Profile.storyboard */; };
 		4045E2362198C118004C4A7C /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4045E2352198C118004C4A7C /* Restaurant.storyboard */; };
 		4045E2392198CCAC004C4A7C /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4045E2382198CCAC004C4A7C /* Order.storyboard */; };
+		4045E24D2198E46C004C4A7C /* ModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045E24C2198E46C004C4A7C /* ModelStore.swift */; };
+		40EF110A219943D500D7FD94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EF1109219943D500D7FD94 /* LoginViewController.swift */; };
 		48D962FE9810A5E9291A7D6E /* Pods_Emprendimiento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B8D04453E7AF7BB2AA9719 /* Pods_Emprendimiento.framework */; };
 		A634EB4C5F7E39D9FD901FB5 /* Pods_EmprendimientoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF7670EFCCC73127B8B2F0C /* Pods_EmprendimientoUITests.framework */; };
 		D1E108B6F0BEC4B53E00FD8C /* Pods_EmprendimientoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A502AEA5A3D1FE110C7344B /* Pods_EmprendimientoTests.framework */; };
@@ -44,6 +49,9 @@
 		0A502AEA5A3D1FE110C7344B /* Pods_EmprendimientoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmprendimientoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E2CD29D2FE03BB4F4E145CD /* Pods-EmprendimientoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmprendimientoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmprendimientoUITests/Pods-EmprendimientoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3AB82EEF05BA0A759EBA948C /* Pods-EmprendimientoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmprendimientoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmprendimientoTests/Pods-EmprendimientoTests.release.xcconfig"; sourceTree = "<group>"; };
+		404064B0219A9EEF00118309 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		404064B2219AABD000118309 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		404064B4219AF03300118309 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4045E1F221987508004C4A7C /* Emprendimiento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emprendimiento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4045E1F521987508004C4A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4045E1FD21987508004C4A7C /* Emprendimiento.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Emprendimiento.xcdatamodel; sourceTree = "<group>"; };
@@ -61,6 +69,8 @@
 		4045E2332198C10D004C4A7C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		4045E2352198C118004C4A7C /* Restaurant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restaurant.storyboard; sourceTree = "<group>"; };
 		4045E2382198CCAC004C4A7C /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
+		4045E24C2198E46C004C4A7C /* ModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStore.swift; sourceTree = "<group>"; };
+		40EF1109219943D500D7FD94 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4423F6BAD884679C2F747D0F /* Pods-Emprendimiento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emprendimiento.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emprendimiento/Pods-Emprendimiento.release.xcconfig"; sourceTree = "<group>"; };
 		4AFA5A993DE86A9642060053 /* Pods-EmprendimientoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmprendimientoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmprendimientoTests/Pods-EmprendimientoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BE797AB67CCFAFA7EB4ACF0 /* Pods-EmprendimientoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmprendimientoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmprendimientoUITests/Pods-EmprendimientoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +168,8 @@
 				4045E2012198750A004C4A7C /* LaunchScreen.storyboard */,
 				4045E1FF2198750A004C4A7C /* Assets.xcassets */,
 				4045E1F521987508004C4A7C /* AppDelegate.swift */,
+				4045E24C2198E46C004C4A7C /* ModelStore.swift */,
+				404064B2219AABD000118309 /* AppStoryboard.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -166,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				4045E22A219895F0004C4A7C /* Login.storyboard */,
+				40EF1109219943D500D7FD94 /* LoginViewController.swift */,
+				404064B0219A9EEF00118309 /* RegisterViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				4045E2332198C10D004C4A7C /* Profile.storyboard */,
+				404064B4219AF03300118309 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -368,12 +383,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Emprendimiento/Pods-Emprendimiento-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -441,7 +454,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40EF110A219943D500D7FD94 /* LoginViewController.swift in Sources */,
+				404064B1219A9EEF00118309 /* RegisterViewController.swift in Sources */,
 				4045E1FE21987508004C4A7C /* Emprendimiento.xcdatamodeld in Sources */,
+				4045E24D2198E46C004C4A7C /* ModelStore.swift in Sources */,
+				404064B5219AF03300118309 /* ProfileViewController.swift in Sources */,
+				404064B3219AABD000118309 /* AppStoryboard.swift in Sources */,
 				4045E1F621987508004C4A7C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

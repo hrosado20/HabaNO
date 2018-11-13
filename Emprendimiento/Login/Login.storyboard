@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="BRW-pa-d5K">
             <objects>
-                <viewController id="TQu-T5-1lS" sceneMemberID="viewController">
+                <viewController id="TQu-T5-1lS" customClass="LoginViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WmQ-5j-iCm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,6 +66,9 @@
                                                 <state key="normal" title="Iniciar sesión">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signIn:" destination="TQu-T5-1lS" eventType="touchUpInside" id="7R6-ht-f96"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyB-KT-uHk">
                                                 <rect key="frame" x="118.5" y="480" width="138" height="28"/>
@@ -133,6 +136,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s8J-MO-emU"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Xat-qZ-rTG" id="oQI-5f-qOk"/>
+                        <outlet property="passwordTextField" destination="Kla-Ye-Jl5" id="dpw-d7-rxS"/>
+                        <outlet property="signInButton" destination="48y-0d-DeF" id="1k5-c7-6hJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T34-fV-Evd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="519" y="815"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="iJj-vA-RYX">
             <objects>
-                <viewController id="kZv-aU-zhF" sceneMemberID="viewController">
+                <viewController id="kZv-aU-zhF" customClass="RegisterViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5z-W5-Lbi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,9 +252,12 @@
                                                             <constraint firstAttribute="width" constant="200" id="htV-nH-dc9"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
-                                                        <state key="normal" title="Iniciar sesión">
+                                                        <state key="normal" title="Registrarse">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="registerAction:" destination="kZv-aU-zhF" eventType="touchUpInside" id="2dO-tz-OKQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -326,6 +337,13 @@
                         <viewLayoutGuide key="safeArea" id="RJe-RB-ipa"/>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="G7A-eb-E41" id="966-NL-Z89"/>
+                        <outlet property="fullNameTextField" destination="HVk-dT-cwO" id="d4S-8f-aYU"/>
+                        <outlet property="passwordTextField" destination="dvD-6X-i41" id="s8Q-Ye-vGL"/>
+                        <outlet property="registerButton" destination="lxn-UN-0Sz" id="Vv5-sV-sJW"/>
+                        <outlet property="repeatPasswordTextField" destination="BUa-Wf-5pk" id="0Mc-eL-4d8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWL-M8-Lff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UgS-dG-Cei">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Le5-Xf-76H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,19 +10,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="SLY-fK-dtH">
             <objects>
-                <viewController id="UgS-dG-Cei" sceneMemberID="viewController">
+                <viewController id="UgS-dG-Cei" customClass="ProfileViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5MG-Fw-FMy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wk6-iw-Se3">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojN-Yp-Kwj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RL-87-v27">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -86,10 +86,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SgU-Zk-cHy"/>
                     </view>
+                    <navigationItem key="navigationItem" id="e9V-zf-XCE"/>
+                    <connections>
+                        <outlet property="fullNameLabel" destination="eoB-To-5px" id="m94-gE-l0m"/>
+                        <outlet property="profileImageView" destination="WZU-uy-8Jj" id="3sS-TU-5Oc"/>
+                        <outlet property="twitterLabel" destination="AkH-OX-Uaq" id="VgU-Uv-FNW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Wu-WJ-Csp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111" y="116"/>
+            <point key="canvasLocation" x="1048.8" y="115.59220389805098"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xQu-Sb-b64">
@@ -99,11 +105,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="k00-fV-0Kc"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5e-Hd-Log" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="110" y="640"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="ul5-eb-tLt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Le5-Xf-76H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="ZVG-BK-Wlh"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XSd-0o-fMc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UgS-dG-Cei" kind="relationship" relationship="rootViewController" id="N6e-Kb-hci"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hw-U3-Eve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="115.59220389805098"/>
         </scene>
     </scenes>
 </document>

@@ -4,6 +4,11 @@
         <relationship name="follower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="followers" inverseEntity="User" syncable="YES"/>
         <relationship name="following" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="followings" inverseEntity="User" syncable="YES"/>
     </entity>
+    <entity name="Login" representedClassName="Login" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="login" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="Order" representedClassName="Order" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="expiredAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -26,13 +31,16 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="followers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Follow" inverseName="follower" inverseEntity="Follow" syncable="YES"/>
         <relationship name="followings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Follow" inverseName="following" inverseEntity="Follow" syncable="YES"/>
+        <relationship name="login" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Login" inverseName="user" inverseEntity="Login" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Follow" positionX="-18" positionY="99" width="128" height="75"/>
+        <element name="Login" positionX="-27" positionY="99" width="128" height="90"/>
         <element name="Order" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="Restaurant" positionX="-54" positionY="36" width="128" height="105"/>
-        <element name="User" positionX="-36" positionY="54" width="128" height="178"/>
-        <element name="Follow" positionX="-18" positionY="99" width="128" height="75"/>
+        <element name="User" positionX="-36" positionY="54" width="128" height="210"/>
     </elements>
 </model>

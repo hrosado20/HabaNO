@@ -89,5 +89,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    lazy var modelStore: ModelStore = ModelStore()
 }
 
