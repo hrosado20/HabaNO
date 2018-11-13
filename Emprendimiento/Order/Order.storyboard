@@ -13,12 +13,13 @@
         <scene sceneID="SvP-iS-jLD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Bv-Zy-A9p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Orders" id="BE7-cj-fZT"/>
+                    <tabBarItem key="tabBarItem" title="Orders" image="order_gray" id="BE7-cj-fZT"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Eg-kW-G3w">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -65,4 +66,7 @@
             <point key="canvasLocation" x="1991" y="19"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="order_gray" width="30" height="30"/>
+    </resources>
 </document>

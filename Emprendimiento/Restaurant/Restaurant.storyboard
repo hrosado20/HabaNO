@@ -13,12 +13,13 @@
         <scene sceneID="fWD-tW-1Cm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r22-2e-TfI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Restaurants" id="VP8-l0-5Xr"/>
+                    <tabBarItem key="tabBarItem" title="Restaurants" image="shop_gray" id="VP8-l0-5Xr"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cYv-f3-5yH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -65,4 +66,7 @@
             <point key="canvasLocation" x="2054" y="136"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shop_gray" width="29" height="30"/>
+    </resources>
 </document>
