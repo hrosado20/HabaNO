@@ -141,6 +141,8 @@
                         <outlet property="loginScrollView" destination="MTy-q3-2wT" id="Faz-RC-ygu"/>
                         <outlet property="passwordTextField" destination="Kla-Ye-Jl5" id="dpw-d7-rxS"/>
                         <outlet property="signInButton" destination="48y-0d-DeF" id="1k5-c7-6hJ"/>
+                        <outletCollection property="textFields" destination="Xat-qZ-rTG" collectionClass="NSMutableArray" id="2Tf-Dv-ffG"/>
+                        <outletCollection property="textFields" destination="Kla-Ye-Jl5" collectionClass="NSMutableArray" id="9b2-rw-6ug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T34-fV-Evd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,6 +347,10 @@
                         <outlet property="registerButton" destination="lxn-UN-0Sz" id="Vv5-sV-sJW"/>
                         <outlet property="repeatPasswordTextField" destination="BUa-Wf-5pk" id="0Mc-eL-4d8"/>
                         <outlet property="signUpScrollView" destination="RiK-hV-FCF" id="NtL-MT-IWl"/>
+                        <outletCollection property="textFields" destination="HVk-dT-cwO" collectionClass="NSMutableArray" id="NDf-LR-Ft3"/>
+                        <outletCollection property="textFields" destination="G7A-eb-E41" collectionClass="NSMutableArray" id="AeA-2O-H3B"/>
+                        <outletCollection property="textFields" destination="dvD-6X-i41" collectionClass="NSMutableArray" id="9JD-Ca-NXL"/>
+                        <outletCollection property="textFields" destination="BUa-Wf-5pk" collectionClass="NSMutableArray" id="CCf-ib-tMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWL-M8-Lff" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,6 +443,6 @@
         <image name="restaurant_icon" width="518" height="518"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rXD-ms-L6u"/>
+        <segue reference="0eW-Ks-VsB"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var signUpScrollView: UIScrollView!
     var modelStore: ModelStore {
@@ -25,7 +26,39 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // MARK: Toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneAction))
+        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        // MARK: ScrollView
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
+        self.view.addGestureRecognizer(tapGesture)
+        
+        // MARK: Textfields
+        for textField in self.textFields {
+            if textField == self.fullNameTextField {
+                Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "circle_user_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)
+            } else if textField == self.emailTextField {
+                Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "email_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)
+            } else if textField == self.passwordTextField {
+                Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "lock_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)
+            } else if textField == self.repeatPasswordTextField {
+                Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "lock_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)
+            }
+            textField.delegate = self
+            textField.layer.borderWidth = 0.2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+            textField.layer.cornerRadius = textField.frame.size.height / 2
+            textField.clipsToBounds = true
+            textField.inputAccessoryView = toolbar
+        }
+        
+        // MARK: SignInButton
+        self.registerButton.layer.cornerRadius = self.registerButton.frame.size.height / 2
+        self.registerButton.backgroundColor = CustomColor.theme.value
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,4 +130,51 @@ class RegisterViewController: UIViewController {
     }
     */
 
+}
+extension RegisterViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let supposedWord = "\(textField.text!)\(string)"
+        
+        if textField == self.emailTextField {
+            // MARK: emailTextField
+            let arguments = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+            let emailValidate = NSPredicate(format: "SELF MATCHES %@", arguments)
+            textField.layer.borderWidth = 1.0
+            guard !supposedWord.isEmpty && supposedWord == "admin" || emailValidate.evaluate(with: supposedWord) else {
+                textField.layer.borderColor = UIColor.red.cgColor
+                return true
+            }
+            textField.layer.borderColor = CustomColor.theme.value.cgColor
+        } else if textField == self.passwordTextField {
+            textField.layer.borderWidth = 1.0
+            guard !supposedWord.isEmpty && supposedWord.count >= 4 else {
+                textField.layer.borderColor = UIColor.red.cgColor
+                return true
+            }
+            textField.layer.borderColor = CustomColor.theme.value.cgColor
+        } else if textField == self.repeatPasswordTextField {
+            textField.layer.borderWidth = 1.0
+            guard !supposedWord.isEmpty && supposedWord.count >= 4 else {
+                textField.layer.borderColor = UIColor.red.cgColor
+                return true
+            }
+            textField.layer.borderColor = CustomColor.theme.value.cgColor
+        }
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = CustomColor.theme.value.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0.25
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

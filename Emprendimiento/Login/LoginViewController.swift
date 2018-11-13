@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var loginScrollView: UIScrollView!
     var email: String = ""
@@ -35,12 +36,30 @@ class LoginViewController: UIViewController {
         // MARK: ScrollView
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
         self.view.addGestureRecognizer(tapGesture)
+       
+        // MARK: Textfields
+        for textField in self.textFields {
+            if textField == self.emailTextField {
+                Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "email_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)
+            } else if textField == self.passwordTextField {
+                Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "lock_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)
+            }
+            textField.delegate = self
+            textField.layer.borderWidth = 0.2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+            textField.layer.cornerRadius = textField.frame.size.height / 2
+            textField.clipsToBounds = true
+            textField.inputAccessoryView = toolbar
+        }
+        
+        // MARK: SignInButton
+        self.signInButton.layer.cornerRadius = self.signInButton.frame.size.height / 2
+        self.signInButton.backgroundColor = CustomColor.theme.value
         
         // MARK: Validation
         if !email.isEmpty {
             self.emailTextField.text = email
         }
-        
         if !password.isEmpty {
             self.passwordTextField.text = password
         }
@@ -126,4 +145,45 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+extension LoginViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let supposedWord = "\(textField.text!)\(string)"
+        
+        if self.emailTextField.isFirstResponder {
+            // MARK: emailTextField
+            let arguments = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+            let emailValidate = NSPredicate(format: "SELF MATCHES %@", arguments)
+            self.emailTextField.layer.borderWidth = 1.0
+            guard !supposedWord.isEmpty && supposedWord == "admin" || emailValidate.evaluate(with: supposedWord) else {
+                self.emailTextField.layer.borderColor = UIColor.red.cgColor
+                return true
+            }
+            self.emailTextField.layer.borderColor = CustomColor.theme.value.cgColor
+        } else {
+            // MARK: passwordTextField
+            self.passwordTextField.layer.borderWidth = 1.0
+            guard !supposedWord.isEmpty && supposedWord.count >= 4 else {
+                self.passwordTextField.layer.borderColor = UIColor.red.cgColor
+                return true
+            }
+            self.passwordTextField.layer.borderColor = CustomColor.theme.value.cgColor
+        }
+        
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = CustomColor.theme.value.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0.25
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

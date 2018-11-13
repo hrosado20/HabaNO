@@ -36,7 +36,7 @@ class CreditCardViewController: UIViewController {
 //        creditCard.autoDismiss = false
 //        creditCard.toast = true
 //        creditCard.cardImage = #imageLiteral(resourceName: "world_map")
-//        creditCard.frontChromeColor = UIColor.init(hexString: "7DC330").withAlphaComponent(0.9)
+        //        creditCard.frontChromeColor = UIColor.init(hexString: "#7DC330").withAlphaComponent(0.9)
 //        creditCard.backTape = UIColor.brown
 //        creditCard.backChromeColor = UIColor.blue
 //        self.creditCardView.addSubview(creditCard)

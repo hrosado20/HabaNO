@@ -13,6 +13,7 @@
 		404064B7219AF9D500118309 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404064B6219AF9D500118309 /* CreditCardViewController.swift */; };
 		404064BA219AFC8300118309 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404064B9219AFC8300118309 /* ColorExtension.swift */; };
 		404064BC219B170400118309 /* StripeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404064BB219B170400118309 /* StripeExtension.swift */; };
+		404064BF219B8E3F00118309 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404064BE219B8E3F00118309 /* Utils.swift */; };
 		4045E1F621987508004C4A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045E1F521987508004C4A7C /* AppDelegate.swift */; };
 		4045E1FE21987508004C4A7C /* Emprendimiento.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4045E1FC21987508004C4A7C /* Emprendimiento.xcdatamodeld */; };
 		4045E2002198750A004C4A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4045E1FF2198750A004C4A7C /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		404064B6219AF9D500118309 /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		404064B9219AFC8300118309 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		404064BB219B170400118309 /* StripeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeExtension.swift; sourceTree = "<group>"; };
+		404064BE219B8E3F00118309 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4045E1F221987508004C4A7C /* Emprendimiento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emprendimiento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4045E1F521987508004C4A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4045E1FD21987508004C4A7C /* Emprendimiento.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Emprendimiento.xcdatamodel; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		404064BD219B8E2500118309 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				404064BE219B8E3F00118309 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4045E1E921987508004C4A7C = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +157,14 @@
 		4045E1F421987508004C4A7C /* Emprendimiento */ = {
 			isa = PBXGroup;
 			children = (
-				404064B8219AFC7600118309 /* Extension */,
 				4045E22621988C80004C4A7C /* Delegate */,
+				404064B8219AFC7600118309 /* Extension */,
 				4045E22721988CA8004C4A7C /* Login */,
 				4045E22921988CDE004C4A7C /* Main */,
 				4045E2372198CC65004C4A7C /* Order */,
 				4045E2302198C0E0004C4A7C /* Profile */,
 				4045E22F2198C0DA004C4A7C /* Restaurant */,
+				404064BD219B8E2500118309 /* Utils */,
 				4045E2042198750A004C4A7C /* Info.plist */,
 				4045E1FC21987508004C4A7C /* Emprendimiento.xcdatamodeld */,
 			);
@@ -482,6 +493,7 @@
 				4045E24D2198E46C004C4A7C /* ModelStore.swift in Sources */,
 				404064B5219AF03300118309 /* ProfileViewController.swift in Sources */,
 				404064BC219B170400118309 /* StripeExtension.swift in Sources */,
+				404064BF219B8E3F00118309 /* Utils.swift in Sources */,
 				404064B7219AF9D500118309 /* CreditCardViewController.swift in Sources */,
 				404064B3219AABD000118309 /* AppStoryboard.swift in Sources */,
 				4045E1F621987508004C4A7C /* AppDelegate.swift in Sources */,

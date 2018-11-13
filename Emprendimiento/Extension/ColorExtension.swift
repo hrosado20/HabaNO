@@ -74,17 +74,17 @@ extension CustomColor {
         case .border:
             instanceColor = UIColor(hexString: "#333333")
         case .theme:
-            instanceColor = UIColor(hexString: "#8CD2B2")
+            instanceColor = UIColor(hexString: "#7DC330").withAlphaComponent(90)
         case .shadow:
             instanceColor = UIColor(hexString: "#cccccc")
         case .darkBackground:
             instanceColor = UIColor(hexString: "#8CC8AA")
         case .lightBackground:
-            instanceColor = UIColor(hexString: "#8CE6C3")
+            instanceColor = UIColor(hexString: "#A2FF41")
         case .intermidiateBackground:
-            instanceColor = UIColor(hexString: "#8CD2B2")
+            instanceColor = UIColor(hexString: "#7DC330").withAlphaComponent(90)
         case .darkText:
-            instanceColor = UIColor(hexString: "#333333")
+            instanceColor = UIColor(hexString: "#598B27")
         case .intermidiateText:
             instanceColor = UIColor(hexString: "#999999")
         case .lightText:
