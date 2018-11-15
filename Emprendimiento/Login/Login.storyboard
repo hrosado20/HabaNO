@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTy-q3-2wT">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MTy-q3-2wT">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4i-7L-XLm">
@@ -34,33 +34,33 @@
                                                 </connections>
                                             </containerView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xat-qZ-rTG">
-                                                <rect key="frame" x="87" y="310" width="200" height="40"/>
+                                                <rect key="frame" x="77" y="310" width="220" height="45"/>
                                                 <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="Zlj-A0-qYt"/>
-                                                    <constraint firstAttribute="height" constant="40" id="jIT-yn-D1q"/>
+                                                    <constraint firstAttribute="width" constant="220" id="Zlj-A0-qYt"/>
+                                                    <constraint firstAttribute="height" constant="45" id="jIT-yn-D1q"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kla-Ye-Jl5">
-                                                <rect key="frame" x="87" y="370" width="200" height="40"/>
+                                                <rect key="frame" x="77" y="365" width="220" height="45"/>
                                                 <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="Z6a-UZ-AEp"/>
-                                                    <constraint firstAttribute="height" constant="40" id="p2w-ow-7rO"/>
+                                                    <constraint firstAttribute="width" constant="220" id="Z6a-UZ-AEp"/>
+                                                    <constraint firstAttribute="height" constant="45" id="p2w-ow-7rO"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48y-0d-DeF">
-                                                <rect key="frame" x="87" y="430" width="200" height="40"/>
+                                                <rect key="frame" x="77" y="430" width="220" height="45"/>
                                                 <color key="backgroundColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410958902" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="0Pn-dl-Tor"/>
-                                                    <constraint firstAttribute="width" constant="200" id="c0q-EF-LxF"/>
+                                                    <constraint firstAttribute="height" constant="45" id="0Pn-dl-Tor"/>
+                                                    <constraint firstAttribute="width" constant="220" id="c0q-EF-LxF"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
                                                 <state key="normal" title="Iniciar sesión">
@@ -71,7 +71,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyB-KT-uHk">
-                                                <rect key="frame" x="118.5" y="480" width="138" height="28"/>
+                                                <rect key="frame" x="118.5" y="485" width="138" height="28"/>
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="13"/>
                                                 <state key="normal" title="Olvidaste tu contraseña?">
                                                     <color key="titleColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,7 +111,7 @@
                                             <constraint firstItem="Npi-n4-DtP" firstAttribute="centerX" secondItem="l4i-7L-XLm" secondAttribute="centerX" id="emf-wv-zkJ"/>
                                             <constraint firstItem="tV9-dh-TgR" firstAttribute="leading" secondItem="l4i-7L-XLm" secondAttribute="leading" id="fPt-wO-LJA"/>
                                             <constraint firstAttribute="height" constant="647" id="fWn-fr-tjE"/>
-                                            <constraint firstItem="Kla-Ye-Jl5" firstAttribute="top" secondItem="Xat-qZ-rTG" secondAttribute="bottom" constant="20" id="he9-LG-WZ6"/>
+                                            <constraint firstItem="Kla-Ye-Jl5" firstAttribute="top" secondItem="Xat-qZ-rTG" secondAttribute="bottom" constant="10" id="he9-LG-WZ6"/>
                                             <constraint firstItem="48y-0d-DeF" firstAttribute="top" secondItem="Kla-Ye-Jl5" secondAttribute="bottom" constant="20" id="kNT-Hu-whJ"/>
                                             <constraint firstAttribute="trailing" secondItem="tV9-dh-TgR" secondAttribute="trailing" id="pPA-9S-vb6"/>
                                             <constraint firstItem="tV9-dh-TgR" firstAttribute="top" secondItem="l4i-7L-XLm" secondAttribute="top" id="wKb-fH-Jkc"/>
@@ -185,74 +185,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiK-hV-FCF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RiK-hV-FCF">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfW-7S-Fpa">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bB8-wh-mvw">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="240" id="7Eo-L1-9tG"/>
+                                                    <constraint firstAttribute="height" constant="220" id="7Eo-L1-9tG"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="qot-2o-EmR" kind="embed" id="0eW-Ks-VsB"/>
                                                 </connections>
                                             </containerView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nHM-2N-rAo">
-                                                <rect key="frame" x="87" y="260" width="200" height="280"/>
+                                                <rect key="frame" x="77" y="240" width="220" height="325"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre y Apellidos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVk-dT-cwO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
-                                                        <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="5oq-hx-g3F"/>
-                                                            <constraint firstAttribute="width" constant="200" id="LXs-5C-7CD"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7A-eb-E41">
-                                                        <rect key="frame" x="0.0" y="60" width="200" height="40"/>
-                                                        <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="5gW-1L-fKL"/>
-                                                            <constraint firstAttribute="width" constant="200" id="d8H-vU-q2O"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvD-6X-i41">
-                                                        <rect key="frame" x="0.0" y="120" width="200" height="40"/>
-                                                        <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="200" id="8uG-Cu-lpZ"/>
-                                                            <constraint firstAttribute="height" constant="40" id="rSr-av-mo6"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repertir Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUa-Wf-5pk">
-                                                        <rect key="frame" x="0.0" y="180" width="200" height="40"/>
-                                                        <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="7XO-Uo-Xer"/>
-                                                            <constraint firstAttribute="width" constant="200" id="RwG-PQ-sKn"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uEI-xa-YmO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="265"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre y Apellidos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVk-dT-cwO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="45"/>
+                                                                <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="5oq-hx-g3F"/>
+                                                                    <constraint firstAttribute="width" constant="220" id="LXs-5C-7CD"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H4E-Bo-gvJ">
+                                                                <rect key="frame" x="0.0" y="55" width="220" height="45"/>
+                                                                <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="220" id="ZGo-J1-pYD"/>
+                                                                    <constraint firstAttribute="height" constant="45" id="nKn-tJ-hIK"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7A-eb-E41">
+                                                                <rect key="frame" x="0.0" y="110" width="220" height="45"/>
+                                                                <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="5gW-1L-fKL"/>
+                                                                    <constraint firstAttribute="width" constant="220" id="d8H-vU-q2O"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvD-6X-i41">
+                                                                <rect key="frame" x="0.0" y="165" width="220" height="45"/>
+                                                                <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="220" id="8uG-Cu-lpZ"/>
+                                                                    <constraint firstAttribute="height" constant="45" id="rSr-av-mo6"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repertir Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUa-Wf-5pk">
+                                                                <rect key="frame" x="0.0" y="220" width="220" height="45"/>
+                                                                <color key="tintColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="7XO-Uo-Xer"/>
+                                                                    <constraint firstAttribute="width" constant="220" id="RwG-PQ-sKn"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxn-UN-0Sz">
-                                                        <rect key="frame" x="0.0" y="240" width="200" height="40"/>
+                                                        <rect key="frame" x="0.0" y="285" width="220" height="40"/>
                                                         <color key="backgroundColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="RsO-DU-JhJ"/>
-                                                            <constraint firstAttribute="width" constant="200" id="htV-nH-dc9"/>
+                                                            <constraint firstAttribute="width" constant="220" id="htV-nH-dc9"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
                                                         <state key="normal" title="Registrarse">
@@ -264,7 +280,7 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-30-KcM">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-30-KcM">
                                                 <rect key="frame" x="20" y="581" width="335" height="27"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Al crearte una cuenta, estás de acuerdo con nuestros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8J6-w4-Jx8">
@@ -273,8 +289,8 @@
                                                         <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEu-a4-Cv2">
-                                                        <rect key="frame" x="276.5" y="0.0" width="58.5" height="27"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEu-a4-Cv2">
+                                                        <rect key="frame" x="275.5" y="0.0" width="59.5" height="27"/>
                                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="12"/>
                                                         <state key="normal" title="Terminos.">
                                                             <color key="titleColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.89533390410000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -347,7 +363,9 @@
                         <outlet property="registerButton" destination="lxn-UN-0Sz" id="Vv5-sV-sJW"/>
                         <outlet property="repeatPasswordTextField" destination="BUa-Wf-5pk" id="0Mc-eL-4d8"/>
                         <outlet property="signUpScrollView" destination="RiK-hV-FCF" id="NtL-MT-IWl"/>
+                        <outlet property="usernameTextField" destination="H4E-Bo-gvJ" id="Q2D-Zv-OdY"/>
                         <outletCollection property="textFields" destination="HVk-dT-cwO" collectionClass="NSMutableArray" id="NDf-LR-Ft3"/>
+                        <outletCollection property="textFields" destination="H4E-Bo-gvJ" collectionClass="NSMutableArray" id="zQY-vt-ibc"/>
                         <outletCollection property="textFields" destination="G7A-eb-E41" collectionClass="NSMutableArray" id="AeA-2O-H3B"/>
                         <outletCollection property="textFields" destination="dvD-6X-i41" collectionClass="NSMutableArray" id="9JD-Ca-NXL"/>
                         <outletCollection property="textFields" destination="BUa-Wf-5pk" collectionClass="NSMutableArray" id="CCf-ib-tMd"/>
@@ -443,6 +461,6 @@
         <image name="restaurant_icon" width="518" height="518"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0eW-Ks-VsB"/>
+        <segue reference="rXD-ms-L6u"/>
     </inferredMetricsTieBreakers>
 </document>

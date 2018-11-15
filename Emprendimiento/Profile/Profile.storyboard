@@ -24,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojN-Yp-Kwj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RL-87-v27">
+                                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RL-87-v27">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="ChT-oE-sbJ"/>
@@ -33,7 +33,7 @@
                                                     <segue destination="tKE-Uq-PPg" kind="embed" id="xqZ-3i-sVb"/>
                                                 </connections>
                                             </containerView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-uy-8Jj">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-uy-8Jj">
                                                 <rect key="frame" x="112" y="125" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="3Og-eV-pVU"/>
@@ -88,6 +88,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="e9V-zf-XCE"/>
                     <connections>
+                        <outlet property="backgroundContainerView" destination="2RL-87-v27" id="4RJ-2I-eyF"/>
                         <outlet property="fullNameLabel" destination="eoB-To-5px" id="m94-gE-l0m"/>
                         <outlet property="profileImageView" destination="WZU-uy-8Jj" id="3sS-TU-5Oc"/>
                         <outlet property="twitterLabel" destination="AkH-OX-Uaq" id="VgU-Uv-FNW"/>
@@ -110,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5e-Hd-Log" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="640"/>
+            <point key="canvasLocation" x="1049" y="656"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ul5-eb-tLt">

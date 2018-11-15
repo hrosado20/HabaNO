@@ -11,6 +11,7 @@ import UIKit
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
@@ -40,6 +41,8 @@ class RegisterViewController: UIViewController {
         // MARK: Textfields
         for textField in self.textFields {
             if textField == self.fullNameTextField {
+                Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "circle_user_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)
+            }  else if textField == self.usernameTextField {
                 Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "circle_user_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)
             } else if textField == self.emailTextField {
                 Utils.addIconToTextField(textField: textField, icon: #imageLiteral(resourceName: "email_gray"), widthMargin: 7.0, heightMargin: 0.0, padding: 5)

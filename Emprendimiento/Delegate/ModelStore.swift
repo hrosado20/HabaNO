@@ -61,9 +61,8 @@ class ModelStore {
         do {
             let result = try self.context.fetch(fetchRequest)
             if !result.isEmpty {
-                print(result[0].user!.objectID.uriRepresentation())
-                UserDefaults.standard.set(result[0].user?.objectID.uriRepresentation(), forKey: "userId")
-                print(UserDefaults.standard.url(forKey: "userId"))
+                print("My response: \(result[0].user!.objectID)")
+                UserDefaults.standard.set(result[0].user!.objectID.uriRepresentation(), forKey: "userId")
                 return true
             } else {
                 return false
@@ -83,5 +82,24 @@ class ModelStore {
         }
         
         return users
+    }
+    
+    func findUser(id: URL) -> User {
+        var user: User = User(context: self.context)
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        let userId = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: id)
+        
+        do {
+            let object = try self.context.existingObject(with: userId!)
+            fetchRequest.predicate = NSPredicate(format: "self == %@", object)
+            
+            user = try self.context.fetch(fetchRequest)[0]
+            
+            print("user: \(user)")
+        } catch {
+            print("Error fecthing user data with objectId")
+        }
+        
+        return user
     }
 }

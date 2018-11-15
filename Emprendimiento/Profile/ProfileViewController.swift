@@ -10,14 +10,26 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var backgroundContainerView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var twitterLabel: UILabel!
+    var modelStore: ModelStore {
+        get {
+            return (UIApplication.shared.delegate as! AppDelegate).modelStore
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // MARK: ImageView
+        self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.height / 2
+        
+        // MARK:
+        let user = self.modelStore.findUser(id: UserDefaults.standard.url(forKey: "userId")!)
+        self.profileImageView.image = UIImage(data: user.profileImage!)
+        self.fullNameLabel.text = user.fullName
     }
 
     override func didReceiveMemoryWarning() {
