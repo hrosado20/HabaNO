@@ -23,11 +23,13 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.modelStore.findFollowers(userId: UserDefaults.standard.url(forKey: Constants.keys.userId)!)
+        
         // MARK: ImageView
         self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.height / 2
         
         // MARK:
-        let user = self.modelStore.findUser(id: UserDefaults.standard.url(forKey: "userId")!)
+        let user = self.modelStore.findUser(id: UserDefaults.standard.url(forKey: Constants.keys.userId)!)
         self.profileImageView.image = UIImage(data: user.profileImage!)
         self.fullNameLabel.text = user.fullName
     }

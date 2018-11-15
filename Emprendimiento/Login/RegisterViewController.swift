@@ -78,11 +78,11 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
-        guard !self.fullNameTextField.text!.isEmpty, !self.emailTextField.text!.isEmpty, !self.passwordTextField.text!.isEmpty, !self.repeatPasswordTextField.text!.isEmpty else {
+        guard !self.fullNameTextField.text!.isEmpty, !self.usernameTextField.text!.isEmpty, !self.emailTextField.text!.isEmpty, !self.passwordTextField.text!.isEmpty, !self.repeatPasswordTextField.text!.isEmpty else {
             return
         }
         
-        self.modelStore.addUser(email: self.emailTextField.text!, password: self.passwordTextField.text!, name: self.fullNameTextField.text!, lastName: "", twitter: "", profileImage: #imageLiteral(resourceName: "user_image"), backgroundImage: #imageLiteral(resourceName: "background_image"), followingCount: 0, followersCount: 0)
+        self.modelStore.addUser(creditCard: nil, email: self.emailTextField.text!, password: self.passwordTextField.text!, fullName: self.fullNameTextField.text!, name: nil, lastName: nil, twitter: self.usernameTextField.text!, profileImage: #imageLiteral(resourceName: "user_image"), backgroundImage: #imageLiteral(resourceName: "background_image"), followingCount: 0, followersCount: 0)
         
         let destinationVC = AppStoryboard.Login.viewController(viewControllerClass: LoginViewController.self)
         destinationVC.email = self.emailTextField.text!
