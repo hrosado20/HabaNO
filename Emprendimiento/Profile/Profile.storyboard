@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile View Controller-->
+        <!--Perfil-->
         <scene sceneID="SLY-fK-dtH">
             <objects>
                 <viewController id="UgS-dG-Cei" customClass="ProfileViewController" customModule="Emprendimiento" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,16 +24,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojN-Yp-Kwj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
-                                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RL-87-v27">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-t3-Bir">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="ChT-oE-sbJ"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Ehh-EK-C8g"/>
                                                 </constraints>
-                                                <connections>
-                                                    <segue destination="tKE-Uq-PPg" kind="embed" id="xqZ-3i-sVb"/>
-                                                </connections>
-                                            </containerView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-uy-8Jj">
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-uy-8Jj">
                                                 <rect key="frame" x="112" y="125" width="150" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="3Og-eV-pVU"/>
@@ -55,15 +52,15 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="2RL-87-v27" firstAttribute="top" secondItem="ojN-Yp-Kwj" secondAttribute="top" id="4wy-XL-6fQ"/>
+                                            <constraint firstItem="WZU-uy-8Jj" firstAttribute="top" secondItem="Exw-t3-Bir" secondAttribute="bottom" constant="-75" id="6K3-KN-qSo"/>
                                             <constraint firstItem="eoB-To-5px" firstAttribute="top" secondItem="WZU-uy-8Jj" secondAttribute="bottom" constant="25" id="Cqd-d6-Jcp"/>
+                                            <constraint firstItem="WZU-uy-8Jj" firstAttribute="centerX" secondItem="Exw-t3-Bir" secondAttribute="centerX" id="dKo-lP-Pwd"/>
                                             <constraint firstItem="eoB-To-5px" firstAttribute="centerX" secondItem="ojN-Yp-Kwj" secondAttribute="centerX" id="dSN-BY-4bm"/>
-                                            <constraint firstAttribute="trailing" secondItem="2RL-87-v27" secondAttribute="trailing" id="ekj-Ts-g0j"/>
+                                            <constraint firstAttribute="trailing" secondItem="Exw-t3-Bir" secondAttribute="trailing" id="eEu-zt-R15"/>
                                             <constraint firstItem="AkH-OX-Uaq" firstAttribute="centerX" secondItem="ojN-Yp-Kwj" secondAttribute="centerX" id="ftA-LE-bdM"/>
-                                            <constraint firstItem="2RL-87-v27" firstAttribute="leading" secondItem="ojN-Yp-Kwj" secondAttribute="leading" id="mgJ-ng-aPy"/>
                                             <constraint firstItem="AkH-OX-Uaq" firstAttribute="top" secondItem="eoB-To-5px" secondAttribute="bottom" id="pGY-mb-Bnm"/>
-                                            <constraint firstItem="WZU-uy-8Jj" firstAttribute="top" secondItem="2RL-87-v27" secondAttribute="bottom" constant="-75" id="r2T-sI-UVC"/>
-                                            <constraint firstItem="WZU-uy-8Jj" firstAttribute="centerX" secondItem="2RL-87-v27" secondAttribute="centerX" id="sf1-p5-phA"/>
+                                            <constraint firstItem="Exw-t3-Bir" firstAttribute="leading" secondItem="ojN-Yp-Kwj" secondAttribute="leading" id="qht-hE-SJV"/>
+                                            <constraint firstItem="Exw-t3-Bir" firstAttribute="top" secondItem="ojN-Yp-Kwj" secondAttribute="top" id="szs-Gd-zGu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -86,9 +83,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SgU-Zk-cHy"/>
                     </view>
-                    <navigationItem key="navigationItem" id="e9V-zf-XCE"/>
+                    <navigationItem key="navigationItem" title="Perfil" id="e9V-zf-XCE"/>
                     <connections>
-                        <outlet property="backgroundContainerView" destination="2RL-87-v27" id="4RJ-2I-eyF"/>
+                        <outlet property="backgroundImageView" destination="Exw-t3-Bir" id="zdH-8w-eTP"/>
                         <outlet property="fullNameLabel" destination="eoB-To-5px" id="m94-gE-l0m"/>
                         <outlet property="profileImageView" destination="WZU-uy-8Jj" id="3sS-TU-5Oc"/>
                         <outlet property="twitterLabel" destination="AkH-OX-Uaq" id="VgU-Uv-FNW"/>
@@ -97,21 +94,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Wu-WJ-Csp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048.8" y="115.59220389805098"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="xQu-Sb-b64">
-            <objects>
-                <viewController id="tKE-Uq-PPg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eb9-C2-hiN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.49019607840000001" green="0.76470588240000004" blue="0.18823529410000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="k00-fV-0Kc"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5e-Hd-Log" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1049" y="656"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ul5-eb-tLt">

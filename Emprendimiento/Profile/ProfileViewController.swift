@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var backgroundContainerView: UIView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var twitterLabel: UILabel!
@@ -22,16 +22,15 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.modelStore.findFollowers(userId: UserDefaults.standard.url(forKey: Constants.keys.userId)!)
         
         // MARK: ImageView
         self.profileImageView.layer.cornerRadius = self.profileImageView.bounds.height / 2
         
-        // MARK:
         let user = self.modelStore.findUser(id: UserDefaults.standard.url(forKey: Constants.keys.userId)!)
+        self.backgroundImageView.image = UIImage(data: user.backgroundImage!)
         self.profileImageView.image = UIImage(data: user.profileImage!)
         self.fullNameLabel.text = user.fullName
+        self.twitterLabel.text = user.twitter
     }
 
     override func didReceiveMemoryWarning() {

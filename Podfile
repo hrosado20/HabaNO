@@ -7,6 +7,7 @@ target 'Emprendimiento' do
 
   # Pods for Emprendimiento
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'AlamofireImage', '~> 3.4'
   pod 'CreditCardForm'
   pod 'Stripe'
 

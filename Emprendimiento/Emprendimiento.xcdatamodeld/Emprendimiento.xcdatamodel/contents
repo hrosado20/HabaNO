@@ -27,8 +27,8 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="login" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Menu" representedClassName="Menu" syncable="YES" codeGenerationType="class">
-        <attribute name="finalDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="initialDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="finalHour" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="initialHour" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="menuDetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MenuDetail" inverseName="menu" inverseEntity="MenuDetail" syncable="YES"/>
         <relationship name="restaurant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="menus" inverseEntity="Restaurant" syncable="YES"/>
@@ -54,6 +54,7 @@
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="initialDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workDays" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="menus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="restaurant" inverseEntity="Menu" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
@@ -79,7 +80,7 @@
         <element name="Menu" positionX="189" positionY="219" width="128" height="120"/>
         <element name="MenuDetail" positionX="-11" positionY="333" width="128" height="105"/>
         <element name="Order" positionX="-207" positionY="302" width="128" height="135"/>
-        <element name="Restaurant" positionX="187" positionY="-18" width="128" height="148"/>
+        <element name="Restaurant" positionX="187" positionY="-18" width="128" height="165"/>
         <element name="User" positionX="-11" positionY="5" width="128" height="238"/>
     </elements>
 </model>

@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         STPPaymentConfiguration.shared().publishableKey = "pk_test_TYooMQauvdEDq54NiTphI7jx"
         STPPaymentConfiguration.shared().appleMerchantIdentifier = "HabaNO"
         
+        print(UserDefaults.standard.bool(forKey: Constants.keys.didPopulateDatabase))
+        if !UserDefaults.standard.bool(forKey: Constants.keys.didPopulateDatabase) {
+            self.modelStore.populateDatabase()
+        }
+        
         return true
     }
 

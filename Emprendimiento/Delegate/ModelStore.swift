@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import AlamofireImage
 
 class ModelStore {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -16,12 +17,58 @@ class ModelStore {
     func populateDatabase() -> Void {
         // MARK: User and Login
         self.addUser(creditCard: nil, email: "admin", password: "admin", fullName: "Hugo Rosado", name: "Hugo", lastName: "Rosado", twitter: "@hugoand", profileImage: #imageLiteral(resourceName: "user_image"), backgroundImage: #imageLiteral(resourceName: "background_image"), followingCount: 0, followersCount: 0)
+        self.addUser(creditCard: nil, email: "dana@hotmail.com", password: "123456", fullName: "Dana Annie", name: "Dana", lastName: "Annie", twitter: "@dannie", profileImage: #imageLiteral(resourceName: "user_image"), backgroundImage: #imageLiteral(resourceName: "background_image"), followingCount: 0, followersCount: 0)
+        self.addUser(creditCard: nil, email: "renzo@gmail.com", password: "123456", fullName: "Renzo Alegre", name: nil, lastName: nil, twitter: "@renzop", profileUrl: URL(string: "https://eabiawak.com/wp-content/uploads/2017/07/photo.png")!, backgroundUrl: URL(string: "https://i.ytimg.com/vi/bEPAbS-SRlg/maxresdefault.jpg")!, followingCount: 0, followersCount: 0)
         
         // MARK: Restaurants
-//        self.addRestaurant(title: "Rosa Náutica", description: "Un buen restaurante.", image: <#T##UIImage#>, createdAt: nil)
+        self.addRestaurant(title: "Rosa Náutica", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/2b/e3/2be38cd3103909e801f65adbac68c494.jpg")!, workDays: "Lunes a sábado", createdAt: nil)
+        self.addRestaurant(title: "El Hornero", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/f2/45/f245068ccb80f25aa4f96944fffb0d57.jpg")!, workDays: "Lunes a viernes", createdAt: nil)
+        self.addRestaurant(title: "Pollería Hikari", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/c2/16/c216e8a0efcab2cb7cced7f45f51639a.jpg")!, workDays: "Lunes a sábado", createdAt: nil)
+        self.addRestaurant(title: "Bembos", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/30/04/30043a61ee90fda2800ade32b941ff92.jpg")!, workDays: "Lunes a viernes", createdAt: nil)
+        self.addRestaurant(title: "Chilli's", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/8c/dc/8cdc70dbec2c1c4de4458667ea213a6c.jpg?output-quality=75&output-format=progressive-jpeg&interpolation=lanczos-none&downsize=1020:*")!, workDays: "Lunes a viernes", createdAt: nil)
+        self.addRestaurant(title: "Heladería Laritza", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/dd/c7/ddc71ea4c68b575944add2df300be4b8.jpg?output-quality=75&output-format=progressive-jpeg&interpolation=lanczos-none&downsize=700:*")!, workDays: "Lunes a viernes", createdAt: nil)
+        self.addRestaurant(title: "Manduca", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/c0/68/c06881242a278dafed5db52163ae0346.jpg")!, workDays: "Lunes a viernes", createdAt: nil)
+        self.addRestaurant(title: "Papachos", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/03/3d/99/48/papacho.jpg")!, workDays: "Lunes a viernes", createdAt: nil)
+        self.addRestaurant(title: "Tom Davis", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-p/14/b3/b0/40/coman-con-calma-pero.jpg")!, workDays: "Lunes a sábado", createdAt: nil)
+        self.addRestaurant(title: "Pardo's Chicken", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/11/f4/ce/0f/pardo-s-chicken.jpg")!, workDays: "Lunes a sábado", createdAt: nil)
+        self.addRestaurant(title: "Norky's", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/0c/f8/cd/12/entrada-del-restaurante.jpg")!, workDays: "Todos los días", createdAt: nil)
         
-        // MARK: Orders
+        // MARK: Dishes
+        self.addDish(privateId: "000001", title: "Arroz con pollo", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/arroz-con-pollo-peruano.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000002", title: "Causa a la limeña", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/causa-a-la-limencc83a.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000003", title: "Ceviche", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/tres-tipos-de-ceviche-peruano.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000004", title: "Lomo Saltado", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/lomo-saltado-tipico-de-peru.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000005", title: "Pachamanca a la olla", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/pachamanca-a-la-olla.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000006", title: "Papa a la huancaína", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/papa-a-la-huancaina.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000007", title: "Carapulcra y sopa seca", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/carapulcra-y-sopa-seca-chinchana.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000008", title: "Ají de Gallina", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://libroderecetas.com/files/recetas/aji-de-gallina.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000009", title: "Bistec a lo pobre", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://libroderecetas.com/files/recetas/bistec-a-lo-pobre.jpg")!, createdAt: nil)
+        self.addDish(privateId: "000010", title: "Caldo de gallina", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://libroderecetas.com/files/recetas/caldo-de-gallina_0.jpg")!, createdAt: nil)
         
+        // MARK: Menus
+        self.addMenu(restaurant: self.findAllRestaurants()[0], price: 13.00, initialHour: "11:00", finalHour: "22:00")
+        self.addMenu(restaurant: self.findAllRestaurants()[1], price: 10.00, initialHour: "10:00", finalHour: "22:00")
+        self.addMenu(restaurant: self.findAllRestaurants()[2], price: 15.00, initialHour: "11:00", finalHour: "22:00")
+        self.addMenu(restaurant: self.findAllRestaurants()[3], price: 12.50, initialHour: "11:00", finalHour: "22:00")
+        self.addMenu(restaurant: self.findAllRestaurants()[4], price: 13.00, initialHour: "11:00", finalHour: "22:00")
+        self.addMenu(restaurant: self.findAllRestaurants()[5], price: 11.00, initialHour: "13:00", finalHour: "22:00")
+        
+        // MARK: MenuDetail
+        self.addMenuDetail(dish: self.findAllDishes()[0], menu: self.findAllMenus()[0], quantity: 1)
+        self.addMenuDetail(dish: self.findAllDishes()[0], menu: self.findAllMenus()[1], quantity: 2)
+        self.addMenuDetail(dish: self.findAllDishes()[0], menu: self.findAllMenus()[2], quantity: 1)
+        self.addMenuDetail(dish: self.findAllDishes()[1], menu: self.findAllMenus()[0], quantity: 1)
+        self.addMenuDetail(dish: self.findAllDishes()[2], menu: self.findAllMenus()[0], quantity: 1)
+        self.addMenuDetail(dish: self.findAllDishes()[3], menu: self.findAllMenus()[3], quantity: 3)
+        
+        // MARK: Order
+        self.addOrder(user: self.findAllUsers()[0], menuDetail: self.findAllMenuDetails()[0], payOnline: true, createdAt: nil, expiresAt: nil, state: Constants.state.active)
+        self.addOrder(user: self.findAllUsers()[0], menuDetail: self.findAllMenuDetails()[1], payOnline: true, createdAt: nil, expiresAt: nil, state: Constants.state.taken)
+        self.addOrder(user: self.findAllUsers()[1], menuDetail: self.findAllMenuDetails()[2], payOnline: false, createdAt: nil, expiresAt: nil, state: Constants.state.taken)
+        self.addOrder(user: self.findAllUsers()[1], menuDetail: self.findAllMenuDetails()[3], payOnline: false, createdAt: nil, expiresAt: nil, state: Constants.state.active)
+        self.addOrder(user: self.findAllUsers()[2], menuDetail: self.findAllMenuDetails()[4], payOnline: true, createdAt: nil, expiresAt: nil, state: Constants.state.active)
+        self.addOrder(user: self.findAllUsers()[2], menuDetail: self.findAllMenuDetails()[5], payOnline: true, createdAt: nil, expiresAt: nil, state: Constants.state.active)
+        UserDefaults.standard.set(true, forKey: Constants.keys.didPopulateDatabase)
     }
     
     // MARK: Add functions
@@ -43,6 +90,26 @@ class ModelStore {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
+    func addUser(creditCard: CreditCard?, email: String, password: String, fullName: String, name: String?, lastName: String?, twitter: String, profileUrl: URL, backgroundUrl: URL, followingCount: Int, followersCount: Int) -> Void {
+        let login = Login(context: self.context)
+        login.email = email
+        login.password = password
+        
+        let user = User(context: self.context)
+        user.creditCard = creditCard
+        user.login = login
+        user.fullName = fullName
+        user.name = name
+        user.lastName = lastName
+        user.twitter = twitter
+        let profileData = try! Data(contentsOf: profileUrl)
+        user.profileImage = UIImagePNGRepresentation(UIImage(data: profileData)!)
+        let backgroundData = try! Data(contentsOf: backgroundUrl)
+        user.backgroundImage = UIImagePNGRepresentation(UIImage(data: backgroundData)!)
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
     func addFollowerOrFollowing(follower: User, following: User) -> Void {
         let follow = Follow(context: self.context)
         follow.follower = follower
@@ -51,22 +118,44 @@ class ModelStore {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
-    func addDish(privateId: String, title: String, info: String, price: Float, image: UIImage, createdAt: Date?) -> Void {
+    func addDish(privateId: String, title: String, info: String, price: Float?, image: UIImage, createdAt: Date?) -> Void {
         let dish = Dish(context: self.context)
         dish.privateId = privateId
         dish.title = title
         dish.info = info
-        dish.price = price
+        dish.price = (price == nil) ? 0.000 : price!
         dish.image = UIImagePNGRepresentation(image)
-        dish.createdAt = (createdAt == nil) ? Utils.getTimeNow() : createdAt
+        dish.createdAt = (createdAt == nil) ? Date() : createdAt!
     }
     
-    func addRestaurant(title: String, description: String, image: UIImage, createdAt: Date?) -> Void {
+    func addDish(privateId: String, title: String, info: String, price: Float?, imageUrl: URL, createdAt: Date?) -> Void {
+        let dish = Dish(context: self.context)
+        dish.privateId = privateId
+        dish.title = title
+        dish.info = info
+        dish.price = (price == nil) ? 0.000 : price!
+        let data = try! Data(contentsOf: imageUrl)
+        dish.image = UIImagePNGRepresentation(UIImage(data: data)!)
+        dish.createdAt = (createdAt == nil) ? Date() : createdAt!
+    }
+    
+    func addRestaurant(title: String, description: String, image: UIImage, workDays: String, createdAt: Date?) -> Void {
         let restaurant = Restaurant(context: self.context)
         restaurant.title = title
         restaurant.info = description
         restaurant.image = UIImagePNGRepresentation(image)
-        restaurant.createdAt = (createdAt == nil) ? Utils.getTimeNow() : createdAt
+        restaurant.createdAt = (createdAt == nil) ? Date() : createdAt!
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    func addRestaurant(title: String, description: String, imageUrl: URL, workDays: String, createdAt: Date?) -> Void {
+        let restaurant = Restaurant(context: self.context)
+        restaurant.title = title
+        restaurant.info = description
+        let data = try! Data(contentsOf: imageUrl)
+        restaurant.image = UIImagePNGRepresentation(UIImage(data: data)!)
+        restaurant.createdAt = (createdAt == nil) ? Date() : createdAt!
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
@@ -82,12 +171,12 @@ class ModelStore {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
-    func addMenu(restaurant: Restaurant, price: Float, initialDate: Date, finalDate: Date) -> Void {
+    func addMenu(restaurant: Restaurant, price: Float, initialHour: String, finalHour: String) -> Void {
         let menu = Menu(context: self.context)
         menu.restaurant = restaurant
         menu.price = price
-        menu.initialDate = initialDate
-        menu.finalDate = finalDate
+        menu.initialHour = initialHour
+        menu.finalHour = finalHour
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
@@ -106,8 +195,8 @@ class ModelStore {
         order.user = user
         order.menuDetail = menuDetail
         order.payOnline = payOnline
-        order.createdAt = (createdAt == nil) ? Utils.getTimeNow() : createdAt
-        order.expiresAt = expiresAt
+        order.createdAt = (createdAt == nil) ? Date() : createdAt!
+        order.expiresAt = (expiresAt == nil) ? Date().addingTimeInterval(2.0 * 60.0) : expiresAt!
         order.state = state
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -183,7 +272,7 @@ class ModelStore {
         return followers
     }
     
-    func dinfFollowings(userId: URL) -> [User] {
+    func findFollowings(userId: URL) -> [User] {
         var followings: [User] = []
         let fetchRequest: NSFetchRequest<Follow> = Follow.fetchRequest()
         let userObjectId = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: userId)
@@ -199,5 +288,60 @@ class ModelStore {
         }
         
         return followings
+    }
+    
+    func findAllRestaurants() -> [Restaurant] {
+        var restaurants: [Restaurant] = []
+        do {
+            restaurants = try self.context.fetch(Restaurant.fetchRequest())
+        } catch {
+            print("Error fecthing restaurant data")
+        }
+        
+        return restaurants
+    }
+    
+    func findAllDishes() -> [Dish] {
+        var dishes: [Dish] = []
+        do {
+            dishes = try self.context.fetch(Dish.fetchRequest())
+        } catch {
+            print("Error fecthing dish data")
+        }
+        
+        return dishes
+    }
+    
+    func findAllMenus() -> [Menu] {
+        var menus: [Menu] = []
+        do {
+            menus = try self.context.fetch(Menu.fetchRequest())
+        } catch {
+            print("Error fetching menu data")
+        }
+        
+        return menus
+    }
+    
+    func findAllMenuDetails() -> [MenuDetail] {
+        var menuDetails: [MenuDetail] = []
+        do {
+            menuDetails = try self.context.fetch(MenuDetail.fetchRequest())
+        } catch {
+            print("Error fetching menu detail data")
+        }
+        
+        return menuDetails
+    }
+    
+    func findAllOrders() -> [Order] {
+        var orders: [Order] = []
+        do {
+            orders = try self.context.fetch(Order.fetchRequest())
+        } catch {
+            print("Error fetching order data")
+        }
+        
+        return orders
     }
 }

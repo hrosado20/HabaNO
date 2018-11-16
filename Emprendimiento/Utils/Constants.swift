@@ -15,6 +15,11 @@ public class Constants {
         public static var userId: String = "userId"
         public static var didPopulateDatabase = "didPopulateDatabase"
     }
+    public struct state {
+        public static var active: String = "active"
+        public static var inactive: String = "inactive"
+        public static var taken: String = "taken"
+    }
     public static var header: String = "header"
     public static var accept: String = "application/json"
 }
