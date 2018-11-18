@@ -153,6 +153,7 @@ class ModelStore {
         restaurant.info = description
         restaurant.image = UIImagePNGRepresentation(image)
         restaurant.createdAt = (createdAt == nil) ? Date() : createdAt!
+        restaurant.state = state
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
@@ -164,6 +165,7 @@ class ModelStore {
         let data = try! Data(contentsOf: imageUrl)
         restaurant.image = UIImagePNGRepresentation(UIImage(data: data)!)
         restaurant.createdAt = (createdAt == nil) ? Date() : createdAt!
+        restaurant.state = state
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
@@ -221,7 +223,6 @@ class ModelStore {
         do {
             let result = try self.context.fetch(fetchRequest)
             if !result.isEmpty {
-                print("My response: \(result[0].user!.objectID)")
                 UserDefaults.standard.set(result[0].user!.objectID.uriRepresentation(), forKey: Constants.keys.userId)
                 return true
             } else {
@@ -253,8 +254,6 @@ class ModelStore {
             fetchRequest.predicate = NSPredicate(format: "self == %@", object)
             
             user = try self.context.fetch(fetchRequest)[0]
-            
-            print("user: \(user)")
         } catch {
             print("Error fecthing user data with objectId")
         }
@@ -282,8 +281,6 @@ class ModelStore {
             fecthRequest.predicate = NSPredicate(format: "self.following == %@", object)
             let follows = try self.context.fetch(fecthRequest)
             for follow in follows {
-                print("Follower: \(follow.follower)")
-                print("Following: \(follow.following)")
                 followers.append(follow.follower!)
             }
         } catch {
@@ -322,6 +319,22 @@ class ModelStore {
         return restaurants
     }
     
+    func findRestaurant(restaurantId: URL) -> Restaurant {
+        var restaurant: Restaurant = Restaurant(context: self.context)
+        let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+        let restaurantObjectId = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: restaurantId)
+        do {
+            let object = try self.context.existingObject(with: restaurantObjectId!)
+            fetchRequest.predicate = NSPredicate(format: "self == %@", object)
+            
+            restaurant = try self.context.fetch(fetchRequest)[0]
+        } catch {
+            print("Error fetching restaurant data with objectId")
+        }
+        
+        return restaurant
+    }
+    
     func findAllDishes() -> [Dish] {
         var dishes: [Dish] = []
         do {
@@ -331,6 +344,31 @@ class ModelStore {
         }
         
         return dishes
+    }
+    
+    func findDish(dishId: URL) -> Dish {
+        var dish: Dish = Dish(context: self.context)
+        let fetchRequest: NSFetchRequest<Dish> = Dish.fetchRequest()
+        let dishObjectId = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: dishId)
+        do {
+            let object = try self.context.existingObject(with: dishObjectId!)
+            fetchRequest.predicate = NSPredicate(format: "self == %@", object)
+            
+            dish = try self.context.fetch(fetchRequest)[0]
+        } catch {
+            print("Error fetching dish data with objectId")
+        }
+        
+        return dish
+    }
+    
+    func getThreeDishes() -> [Dish] {
+        let dishes = self.findAllDishes()
+        return [
+            dishes[arc4random_uniform(UInt32(dishes.count)).hashValue],
+            dishes[arc4random_uniform(UInt32(dishes.count)).hashValue],
+            dishes[arc4random_uniform(UInt32(dishes.count)).hashValue]
+        ]
     }
     
     func findAllMenus() -> [Menu] {
@@ -344,6 +382,22 @@ class ModelStore {
         return menus
     }
     
+    func findMenu(menuId: URL) -> Menu {
+        var menu: Menu = Menu(context: self.context)
+        let fetchRequest: NSFetchRequest<Menu> = Menu.fetchRequest()
+        let menuObjectId = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: menuId)
+        do {
+            let object = try self.context.existingObject(with: menuObjectId!)
+            fetchRequest.predicate = NSPredicate(format: "self == %@", object)
+            
+            menu = try self.context.fetch(fetchRequest)[0]
+        } catch {
+            print("Error fetching menu data with objectId")
+        }
+        
+        return menu
+    }
+    
     func findAllMenuDetails() -> [MenuDetail] {
         var menuDetails: [MenuDetail] = []
         do {
@@ -355,6 +409,22 @@ class ModelStore {
         return menuDetails
     }
     
+    func findMenuDetail(menuDetailId: URL) -> MenuDetail {
+        var menuDetail: MenuDetail = MenuDetail(context: self.context)
+        let fetchRequest: NSFetchRequest<MenuDetail> = MenuDetail.fetchRequest()
+        let menuDetailObjectId = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: menuDetailId)
+        do {
+            let object = try self.context.existingObject(with: menuDetailObjectId!)
+            fetchRequest.predicate = NSPredicate(format: "self == %@", object)
+            
+            menuDetail = try self.context.fetch(fetchRequest)[0]
+        } catch {
+            print("Error fetching Menu Detail data with objectId")
+        }
+        
+        return menuDetail
+    }
+    
     func findAllOrders() -> [Order] {
         var orders: [Order] = []
         do {
@@ -364,5 +434,21 @@ class ModelStore {
         }
         
         return orders
+    }
+    
+    func findOrder(orderId: URL) -> Order {
+        var order: Order = Order(context: self.context)
+        let fetchRequest: NSFetchRequest<Order> = Order.fetchRequest()
+        let orderObjectId = self.context.persistentStoreCoordinator?.managedObjectID(forURIRepresentation: orderId)
+        do {
+            let object = try self.context.existingObject(with: orderObjectId!)
+            fetchRequest.predicate = NSPredicate(format: "self == %@", object)
+            
+            order = try self.context.fetch(fetchRequest)[0]
+        } catch {
+            print("Error fetching order data with objectId")
+        }
+        
+        return order
     }
 }

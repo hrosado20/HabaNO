@@ -60,9 +60,15 @@ class RestaurantsCollectionViewController: UICollectionViewController {
             return cell
         }
     
-        // Configure the cell
-    
         return UICollectionViewCell()
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let restaurant = self.restaurants[indexPath.row]
+        let destinationVC = AppStoryboard.Restaurant.viewController(viewControllerClass: RestaurantDetailViewController.self)
+        destinationVC.restaurantId = restaurant.objectID.uriRepresentation()
+        self.show(destinationVC, sender: nil)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 
     // MARK: UICollectionViewDelegate

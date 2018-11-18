@@ -10,6 +10,10 @@ target 'Emprendimiento' do
   pod 'AlamofireImage', '~> 3.4'
   pod 'CreditCardForm'
   pod 'Stripe'
+  pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
   target 'EmprendimientoTests' do
     inherit! :search_paths

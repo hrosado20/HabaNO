@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wk6-iw-Se3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="851"/>
+                                <rect key="frame" x="0.0" y="19" width="375" height="832"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojN-Yp-Kwj">
                                         <rect key="frame" x="0.0" y="-64" width="375" height="853"/>
@@ -110,7 +110,7 @@
                             <constraint firstItem="SgU-Zk-cHy" firstAttribute="bottom" secondItem="wk6-iw-Se3" secondAttribute="bottom" id="242-aq-GTy"/>
                             <constraint firstItem="wk6-iw-Se3" firstAttribute="leading" secondItem="SgU-Zk-cHy" secondAttribute="leading" id="Fkd-Yg-32h"/>
                             <constraint firstItem="SgU-Zk-cHy" firstAttribute="trailing" secondItem="wk6-iw-Se3" secondAttribute="trailing" id="gra-FX-4bE"/>
-                            <constraint firstItem="wk6-iw-Se3" firstAttribute="top" secondItem="SgU-Zk-cHy" secondAttribute="top" constant="-64" id="vhc-G2-KTD"/>
+                            <constraint firstItem="wk6-iw-Se3" firstAttribute="top" secondItem="SgU-Zk-cHy" secondAttribute="top" constant="-45" id="vhc-G2-KTD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SgU-Zk-cHy"/>
                     </view>
