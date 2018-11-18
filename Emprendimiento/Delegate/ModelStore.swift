@@ -20,18 +20,24 @@ class ModelStore {
         self.addUser(creditCard: nil, email: "dana@hotmail.com", password: "123456", fullName: "Dana Annie", name: "Dana", lastName: "Annie", twitter: "@dannie", profileImage: #imageLiteral(resourceName: "user_image"), backgroundImage: #imageLiteral(resourceName: "background_image"), followingCount: 0, followersCount: 0)
         self.addUser(creditCard: nil, email: "renzo@gmail.com", password: "123456", fullName: "Renzo Alegre", name: nil, lastName: nil, twitter: "@renzop", profileUrl: URL(string: "https://eabiawak.com/wp-content/uploads/2017/07/photo.png")!, backgroundUrl: URL(string: "https://i.ytimg.com/vi/bEPAbS-SRlg/maxresdefault.jpg")!, followingCount: 0, followersCount: 0)
         
+        // MARK: Followers and Followings
+        self.addFollowerOrFollowing(follower: self.findAllUsers()[0], following: self.findAllUsers()[1])
+        self.addFollowerOrFollowing(follower: self.findAllUsers()[0], following: self.findAllUsers()[2])
+        self.addFollowerOrFollowing(follower: self.findAllUsers()[1], following: self.findAllUsers()[0])
+        self.addFollowerOrFollowing(follower: self.findAllUsers()[1], following: self.findAllUsers()[2])
+        
         // MARK: Restaurants
-        self.addRestaurant(title: "Rosa Náutica", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/2b/e3/2be38cd3103909e801f65adbac68c494.jpg")!, workDays: "Lunes a sábado", createdAt: nil)
-        self.addRestaurant(title: "El Hornero", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/f2/45/f245068ccb80f25aa4f96944fffb0d57.jpg")!, workDays: "Lunes a viernes", createdAt: nil)
-        self.addRestaurant(title: "Pollería Hikari", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/c2/16/c216e8a0efcab2cb7cced7f45f51639a.jpg")!, workDays: "Lunes a sábado", createdAt: nil)
-        self.addRestaurant(title: "Bembos", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/30/04/30043a61ee90fda2800ade32b941ff92.jpg")!, workDays: "Lunes a viernes", createdAt: nil)
-        self.addRestaurant(title: "Chilli's", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/8c/dc/8cdc70dbec2c1c4de4458667ea213a6c.jpg?output-quality=75&output-format=progressive-jpeg&interpolation=lanczos-none&downsize=1020:*")!, workDays: "Lunes a viernes", createdAt: nil)
-        self.addRestaurant(title: "Heladería Laritza", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/dd/c7/ddc71ea4c68b575944add2df300be4b8.jpg?output-quality=75&output-format=progressive-jpeg&interpolation=lanczos-none&downsize=700:*")!, workDays: "Lunes a viernes", createdAt: nil)
-        self.addRestaurant(title: "Manduca", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/c0/68/c06881242a278dafed5db52163ae0346.jpg")!, workDays: "Lunes a viernes", createdAt: nil)
-        self.addRestaurant(title: "Papachos", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/03/3d/99/48/papacho.jpg")!, workDays: "Lunes a viernes", createdAt: nil)
-        self.addRestaurant(title: "Tom Davis", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-p/14/b3/b0/40/coman-con-calma-pero.jpg")!, workDays: "Lunes a sábado", createdAt: nil)
-        self.addRestaurant(title: "Pardo's Chicken", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/11/f4/ce/0f/pardo-s-chicken.jpg")!, workDays: "Lunes a sábado", createdAt: nil)
-        self.addRestaurant(title: "Norky's", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/0c/f8/cd/12/entrada-del-restaurante.jpg")!, workDays: "Todos los días", createdAt: nil)
+        self.addRestaurant(title: "Rosa Náutica", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/2b/e3/2be38cd3103909e801f65adbac68c494.jpg")!, workDays: "Lunes a sábado", createdAt: nil, state: "Abierto")
+        self.addRestaurant(title: "El Hornero", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/f2/45/f245068ccb80f25aa4f96944fffb0d57.jpg")!, workDays: "Lunes a viernes", createdAt: nil, state: "Abierto")
+        self.addRestaurant(title: "Pollería Hikari", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/c2/16/c216e8a0efcab2cb7cced7f45f51639a.jpg")!, workDays: "Lunes a sábado", createdAt: nil, state: "Abierto")
+        self.addRestaurant(title: "Bembos", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/30/04/30043a61ee90fda2800ade32b941ff92.jpg")!, workDays: "Lunes a viernes", createdAt: nil, state: "Cerrado")
+        self.addRestaurant(title: "Chilli's", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/8c/dc/8cdc70dbec2c1c4de4458667ea213a6c.jpg?output-quality=75&output-format=progressive-jpeg&interpolation=lanczos-none&downsize=1020:*")!, workDays: "Lunes a viernes", createdAt: nil, state: "cerrado")
+        self.addRestaurant(title: "Heladería Laritza", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/dd/c7/ddc71ea4c68b575944add2df300be4b8.jpg?output-quality=75&output-format=progressive-jpeg&interpolation=lanczos-none&downsize=700:*")!, workDays: "Lunes a viernes", createdAt: nil, state: "Abierto")
+        self.addRestaurant(title: "Manduca", description: "Un buen restaurante.", imageUrl: URL(string: "https://imgs-akamai.mnstatic.com/c0/68/c06881242a278dafed5db52163ae0346.jpg")!, workDays: "Lunes a viernes", createdAt: nil, state: "Abierto")
+        self.addRestaurant(title: "Papachos", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/03/3d/99/48/papacho.jpg")!, workDays: "Lunes a viernes", createdAt: nil, state: "Abierto")
+        self.addRestaurant(title: "Tom Davis", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-p/14/b3/b0/40/coman-con-calma-pero.jpg")!, workDays: "Lunes a sábado", createdAt: nil, state: "Cerrado")
+        self.addRestaurant(title: "Pardo's Chicken", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/11/f4/ce/0f/pardo-s-chicken.jpg")!, workDays: "Lunes a sábado", createdAt: nil, state: "Abierto")
+        self.addRestaurant(title: "Norky's", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/0c/f8/cd/12/entrada-del-restaurante.jpg")!, workDays: "Todos los días", createdAt: nil, state: "Abierto")
         
         // MARK: Dishes
         self.addDish(privateId: "000001", title: "Arroz con pollo", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/arroz-con-pollo-peruano.jpg")!, createdAt: nil)
@@ -114,6 +120,8 @@ class ModelStore {
         let follow = Follow(context: self.context)
         follow.follower = follower
         follow.following = following
+        print("Follower: \(follower)")
+        print("Following: \(following)")
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
@@ -139,7 +147,7 @@ class ModelStore {
         dish.createdAt = (createdAt == nil) ? Date() : createdAt!
     }
     
-    func addRestaurant(title: String, description: String, image: UIImage, workDays: String, createdAt: Date?) -> Void {
+    func addRestaurant(title: String, description: String, image: UIImage, workDays: String, createdAt: Date?, state: String) -> Void {
         let restaurant = Restaurant(context: self.context)
         restaurant.title = title
         restaurant.info = description
@@ -149,7 +157,7 @@ class ModelStore {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
-    func addRestaurant(title: String, description: String, imageUrl: URL, workDays: String, createdAt: Date?) -> Void {
+    func addRestaurant(title: String, description: String, imageUrl: URL, workDays: String, createdAt: Date?, state: String) -> Void {
         let restaurant = Restaurant(context: self.context)
         restaurant.title = title
         restaurant.info = description
@@ -254,6 +262,17 @@ class ModelStore {
         return user
     }
     
+    func findAllFollows() -> [Follow] {
+        var follows: [Follow] = []
+        do {
+            follows = try self.context.fetch(Follow.fetchRequest())
+        } catch {
+            print("Error fetching follow data")
+        }
+        
+        return follows
+    }
+    
     func findFollowers(userId: URL) -> [User] {
         var followers: [User] = []
         let fecthRequest: NSFetchRequest<Follow> = Follow.fetchRequest()
@@ -263,6 +282,8 @@ class ModelStore {
             fecthRequest.predicate = NSPredicate(format: "self.following == %@", object)
             let follows = try self.context.fetch(fecthRequest)
             for follow in follows {
+                print("Follower: \(follow.follower)")
+                print("Following: \(follow.following)")
                 followers.append(follow.follower!)
             }
         } catch {
