@@ -37,7 +37,7 @@ class ModelStore {
         self.addRestaurant(title: "Papachos", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/03/3d/99/48/papacho.jpg")!, workDays: "Lunes a viernes", createdAt: nil, state: "Abierto")
         self.addRestaurant(title: "Tom Davis", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-p/14/b3/b0/40/coman-con-calma-pero.jpg")!, workDays: "Lunes a sábado", createdAt: nil, state: "Cerrado")
         self.addRestaurant(title: "Pardo's Chicken", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/11/f4/ce/0f/pardo-s-chicken.jpg")!, workDays: "Lunes a sábado", createdAt: nil, state: "Abierto")
-        self.addRestaurant(title: "Norky's", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/0c/f8/cd/12/entrada-del-restaurante.jpg")!, workDays: "Todos los días", createdAt: nil, state: "Abierto")
+//        self.addRestaurant(title: "Norky's", description: "Un buen restaurante.", imageUrl: URL(string: "https://media-cdn.tripadvisor.com/media/photo-o/0c/f8/cd/12/entrada-del-restaurante.jpg")!, workDays: "Todos los días", createdAt: nil, state: "Abierto")
         
         // MARK: Dishes
         self.addDish(privateId: "000001", title: "Arroz con pollo", info: "Uno de los platos más consumidos.", price: nil, imageUrl: URL(string: "https://www.viajejet.com/wp-content/viajes/arroz-con-pollo-peruano.jpg")!, createdAt: nil)
@@ -68,12 +68,12 @@ class ModelStore {
         self.addMenuDetail(dish: self.findAllDishes()[3], menu: self.findAllMenus()[3], quantity: 3)
         
         // MARK: Order
-        self.addOrder(user: self.findAllUsers()[0], menuDetail: self.findAllMenuDetails()[0], payOnline: true, createdAt: nil, expiresAt: nil, state: Constants.state.active)
-        self.addOrder(user: self.findAllUsers()[0], menuDetail: self.findAllMenuDetails()[1], payOnline: true, createdAt: nil, expiresAt: nil, state: Constants.state.taken)
-        self.addOrder(user: self.findAllUsers()[1], menuDetail: self.findAllMenuDetails()[2], payOnline: false, createdAt: nil, expiresAt: nil, state: Constants.state.taken)
-        self.addOrder(user: self.findAllUsers()[1], menuDetail: self.findAllMenuDetails()[3], payOnline: false, createdAt: nil, expiresAt: nil, state: Constants.state.active)
-        self.addOrder(user: self.findAllUsers()[2], menuDetail: self.findAllMenuDetails()[4], payOnline: true, createdAt: nil, expiresAt: nil, state: Constants.state.active)
-        self.addOrder(user: self.findAllUsers()[2], menuDetail: self.findAllMenuDetails()[5], payOnline: true, createdAt: nil, expiresAt: nil, state: Constants.state.active)
+        self.addOrder(user: self.findAllUsers()[0], menuDetail: self.findAllMenuDetails()[0], payOnline: true, creditCardType: "visa", createdAt: nil, expiresAt: nil, state: Constants.state.activeInSpanish)
+        self.addOrder(user: self.findAllUsers()[0], menuDetail: self.findAllMenuDetails()[1], payOnline: true, creditCardType: "visa", createdAt: nil, expiresAt: nil, state: Constants.state.takenInSpanish)
+        self.addOrder(user: self.findAllUsers()[1], menuDetail: self.findAllMenuDetails()[2], payOnline: false, creditCardType: "visa", createdAt: nil, expiresAt: nil, state: Constants.state.takenInSpanish)
+        self.addOrder(user: self.findAllUsers()[1], menuDetail: self.findAllMenuDetails()[3], payOnline: false, creditCardType: "mastercard", createdAt: nil, expiresAt: nil, state: Constants.state.activeInSpanish)
+        self.addOrder(user: self.findAllUsers()[2], menuDetail: self.findAllMenuDetails()[4], payOnline: true, creditCardType: "mastercard", createdAt: nil, expiresAt: nil, state: Constants.state.activeInSpanish)
+        self.addOrder(user: self.findAllUsers()[2], menuDetail: self.findAllMenuDetails()[5], payOnline: true, creditCardType: "mastercard", createdAt: nil, expiresAt: nil, state: Constants.state.activeInSpanish)
         UserDefaults.standard.set(true, forKey: Constants.keys.didPopulateDatabase)
     }
     
@@ -200,11 +200,12 @@ class ModelStore {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
-    func addOrder(user: User, menuDetail: MenuDetail, payOnline: Bool, createdAt: Date?, expiresAt: Date?, state: String) -> Void {
+    func addOrder(user: User, menuDetail: MenuDetail, payOnline: Bool, creditCardType: String, createdAt: Date?, expiresAt: Date?, state: String) -> Void {
         let order = Order(context: self.context)
         order.user = user
         order.menuDetail = menuDetail
         order.payOnline = payOnline
+        order.creditCardType = creditCardType
         order.createdAt = (createdAt == nil) ? Date() : createdAt!
         order.expiresAt = (expiresAt == nil) ? Date().addingTimeInterval(2.0 * 60.0) : expiresAt!
         order.state = state

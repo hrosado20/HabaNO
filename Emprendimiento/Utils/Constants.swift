@@ -17,8 +17,10 @@ public class Constants {
     }
     public struct state {
         public static var active: String = "active"
+        public static var activeInSpanish: String = "activo"
         public static var inactive: String = "inactive"
         public static var taken: String = "taken"
+        public static var takenInSpanish: String = "consumido"
     }
     public static var header: String = "header"
     public static var accept: String = "application/json"
