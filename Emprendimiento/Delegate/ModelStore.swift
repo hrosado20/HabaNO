@@ -120,8 +120,6 @@ class ModelStore {
         let follow = Follow(context: self.context)
         follow.follower = follower
         follow.following = following
-        print("Follower: \(follower)")
-        print("Following: \(following)")
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }

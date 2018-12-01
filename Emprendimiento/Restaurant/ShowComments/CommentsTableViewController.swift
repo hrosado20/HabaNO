@@ -8,11 +8,14 @@
 
 import UIKit
 import SwiftyJSON
+import Firebase
 
 class CommentsTableViewController: UITableViewController {
-    var comments: [JSON]!
+    @IBOutlet var emptyView: UIView!
+    var comments: [Comment] = []
     var image: UIImage!
-
+    var restaurantFirebaseId: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,11 +24,29 @@ class CommentsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadComments(toFirst first: Int, toLast last: Int) -> Void {
+        let database = Database.database().reference().child("Restaurants").child(self.restaurantFirebaseId).child("Comments").queryLimited(toFirst: UInt(last))
+        database.observe(.value) { (snapshot) in
+            self.comments.append(contentsOf: Comment.buildCollection(fromFirebaseSnapshot: snapshot))
+            self.tableView.reloadData()
+        }
+    }
+    
+    func loadFirstComment() -> Void {
+        let database = Database.database().reference().child("Restaurants").child(self.restaurantFirebaseId).child("Comments").queryLimited(toLast: 1)
+        database.observeSingleEvent(of: .value) { (snapshot) in
+            self.comments = Comment.buildCollection(fromFirebaseSnapshot: snapshot)
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -37,15 +58,25 @@ class CommentsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if self.comments.count == 0 {
+            self.tableView.separatorStyle = .none
+            self.tableView.backgroundView = self.emptyView
+            return 0
+        }
+        self.tableView.separatorStyle = .singleLine
+        self.tableView.backgroundView = UIView()
         return self.comments.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier, for: indexPath)
+        let comment = self.comments[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier, for: indexPath) as? CommentTableViewCell {
+            cell.setObject(with: comment)
+            
+            return cell
+        }
 
-        // Configure the cell...
-
-        return cell
+        return UITableViewCell()
     }
 
     /*

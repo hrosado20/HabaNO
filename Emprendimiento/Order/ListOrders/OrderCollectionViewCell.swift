@@ -34,7 +34,9 @@ class OrderCollectionViewCell: UICollectionViewCell {
     
     func setObject(with order: Order) -> Void {
         self.setupView()
-        self.orderImageView.image = UIImage(data: order.menuDetail!.dish!.image!)
+        if let img = order.menuDetail?.dish?.image {
+            self.orderImageView.image = UIImage(data: img)
+        }
         self.nameLabel.text = order.menuDetail?.dish?.title
         self.statusLabel.text = order.state
         if order.payOnline {

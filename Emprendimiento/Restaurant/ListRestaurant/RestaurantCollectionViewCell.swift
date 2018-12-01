@@ -31,7 +31,9 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     
     func setObject(with restaurant: Restaurant) -> Void {
         self.setupView()
-        self.restaurantImageView.image = UIImage(data: restaurant.image!)
+        if let img = restaurant.image {
+            self.restaurantImageView.image = UIImage(data: img)
+        }
         self.nameLabel.text = restaurant.title
         self.statusLabel.text = restaurant.state
     }

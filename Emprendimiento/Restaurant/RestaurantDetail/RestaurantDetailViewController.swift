@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RestaurantDetailViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet var dishesImageViews: [UIImageView]!
     var restaurantId: URL!
+    var restaurantFirebaseId: String!
     var modelStore: ModelStore {
         get {
             return (UIApplication.shared.delegate as! AppDelegate).modelStore
@@ -28,6 +30,7 @@ class RestaurantDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.setupView()
+        self.verifyRestaurantInFirebase()
         let restaurant = self.modelStore.findRestaurant(restaurantId: self.restaurantId)
         self.restaurantImageView.image = UIImage(data: restaurant.image!)
         self.nameLabel.text = restaurant.title
@@ -56,15 +59,49 @@ class RestaurantDetailViewController: UIViewController {
         gradient.locations = [0.3, 1.0]
         self.gradientView.layer.insertSublayer(gradient, at: 0)
     }
+    
+    func verifyRestaurantInFirebase() -> Void {
+        let database = Database.database().reference().child("Restaurants")
+        let reference = database.queryOrdered(byChild: Constants.keys.restaurantId).queryEqual(toValue: self.restaurantId.absoluteString)
+        reference.observeSingleEvent(of: .value) { (snapshot) in
+            guard (snapshot.value as? NSDictionary) != nil else {
+                let dict : NSDictionary = [
+                    Constants.keys.restaurantId: self.restaurantId.absoluteString
+                ]
+                self.restaurantFirebaseId = database.childByAutoId().key
+                database.childByAutoId().setValue(dict, withCompletionBlock: { (error, ref) in
+                    if error != nil {
+                        print(error!)
+                    }
+                    else {
+                        self.loadChildViewControllers()
+                        print("Restaurant saved successfully!")
+                    }
+                })
+                return
+            }
+            
+            print((snapshot.children.nextObject() as! DataSnapshot).key)
+            self.restaurantFirebaseId = (snapshot.children.nextObject() as! DataSnapshot).key
+            self.loadChildViewControllers()
+        }
+    }
+    
+    func loadChildViewControllers() -> Void {
+        let commentTableViewController = self.childViewControllers.first as! CommentsTableViewController
+        commentTableViewController.restaurantFirebaseId = self.restaurantFirebaseId
+        commentTableViewController.loadFirstComment()
+    }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showCommentDetail" {
+            let destinationVC = segue.destination as! CommentViewController
+            destinationVC.restaurantFirebaseId = self.restaurantFirebaseId
+            destinationVC.image = self.restaurantImageView.image
+        }
     }
-    */
 
 }

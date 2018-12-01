@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import AlamofireImage
 
 class CommentTableViewCell: UITableViewCell {
 
@@ -25,6 +27,14 @@ class CommentTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setObject(with comment: Comment) -> Void {
+        if let imageData = Data(base64Encoded: comment.userImage) {
+            self.userImageView.image = UIImage(data: imageData)
+        }
+        self.nameLabel.text = comment.userName
+        self.commentLabel.text = comment.comment
     }
 
 }

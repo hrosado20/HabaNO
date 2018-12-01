@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !UserDefaults.standard.bool(forKey: Constants.keys.didPopulateDatabase) {
             self.modelStore.populateDatabase()
         }
-        
+        UserDefaults.standard.set(true, forKey: "showStartCreditCard")
         // MARK: Firebase configuration
         FirebaseApp.configure()
         

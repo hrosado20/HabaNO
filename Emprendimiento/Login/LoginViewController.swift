@@ -82,11 +82,8 @@ class LoginViewController: UIViewController {
         guard !self.emailTextField.text!.isEmpty, !self.passwordTextField.text!.isEmpty else {
             return
         }
-        
-        let users = self.modelStore.findAllUsers()
-        print("user: \(users)")
-        
         if self.modelStore.signIn(email: self.emailTextField.text!, password: self.passwordTextField.text!) {
+            print(UserDefaults.standard.bool(forKey: "showStartCreditCard"))
             if UserDefaults.standard.bool(forKey: "showStartCreditCard") {
                 let vc = AppStoryboard.Login.viewController(viewControllerClass: CreditCardViewController.self)
                 self.present(vc, animated: true, completion: nil)
